@@ -1,7 +1,7 @@
 DP
 ==
 
-[![Build Status](https://img.shields.io/travis/DigiDNA/DP.svg?branch=master&style=flat)](https://travis-ci.org/DigiDNA/DP)
+[![Build-AppVeyor](https://ci.appveyor.com/api/projects/status/github/DigiDNA/DP?svg=true)](https://ci.appveyor.com/project/DigiDNA/DP)
 [![Issues](http://img.shields.io/github/issues/DigiDNA/DP.svg?style=flat)](https://github.com/DigiDNA/DP/issues)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
 ![License](https://img.shields.io/badge/license-mit-brightgreen.svg?style=flat)
