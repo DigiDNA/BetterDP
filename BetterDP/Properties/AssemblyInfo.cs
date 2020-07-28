@@ -33,7 +33,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [ assembly: AssemblyTitle( "BetterDP" ) ]
-[ assembly: AssemblyDescription( "" ) ]
+[ assembly: AssemblyDescription( "Simpler declaration for WPF Dependency Properties." )]
 [ assembly: AssemblyConfiguration( "" ) ]
 [ assembly: AssemblyCompany( "DigiDNA" ) ]
 [ assembly: AssemblyProduct( "BetterDP" ) ]
