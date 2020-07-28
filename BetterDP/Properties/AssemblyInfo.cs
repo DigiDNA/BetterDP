@@ -32,11 +32,11 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[ assembly: AssemblyTitle( "DP" ) ]
+[ assembly: AssemblyTitle( "BetterDP" ) ]
 [ assembly: AssemblyDescription( "" ) ]
 [ assembly: AssemblyConfiguration( "" ) ]
 [ assembly: AssemblyCompany( "DigiDNA" ) ]
-[ assembly: AssemblyProduct( "DP" ) ]
+[ assembly: AssemblyProduct( "BetterDP" ) ]
 [ assembly: AssemblyCopyright( "Copyright ©  2020" ) ]
 [ assembly: AssemblyTrademark( "" ) ]
 [ assembly: AssemblyCulture( "" ) ]

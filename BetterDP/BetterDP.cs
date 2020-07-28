@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /*!
- * @file        DP.cs
+ * @file        BetterDP.cs
  * @copyright   (c) 2020, DigiDNA - www.digidna.net
  * @author      Jean-David Gadina - www.digidna.net
  */
@@ -37,7 +37,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace DP
+namespace BetterDP
 {
     public class DP: Attribute
     {}

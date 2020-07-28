@@ -8,6 +8,6 @@ configuration:
 install:
   - git submodule update --init --recursive
 build:
-  project: DP.sln
+  project: BetterDP.sln
 before_build:
   - nuget restore

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DP", "DP\DP.csproj", "{7BF6CC4B-7412-4CE9-B41D-6463EC235B43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterDP", "BetterDP\BetterDP.csproj", "{7BF6CC4B-7412-4CE9-B41D-6463EC235B43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{B0028956-15B3-4D7C-BF4B-32BBF65FCC53}"
 EndProject

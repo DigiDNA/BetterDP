@@ -1,8 +1,8 @@
-DP
-==
+BetterDP
+========
 
-[![Build-AppVeyor](https://ci.appveyor.com/api/projects/status/github/DigiDNA/DP?svg=true)](https://ci.appveyor.com/project/DigiDNA/DP)
-[![Issues](http://img.shields.io/github/issues/DigiDNA/DP.svg?style=flat)](https://github.com/DigiDNA/DP/issues)
+[![Build-AppVeyor](https://ci.appveyor.com/api/projects/status/github/DigiDNA/BetterDP?svg=true)](https://ci.appveyor.com/project/DigiDNA/BetterDP)
+[![Issues](http://img.shields.io/github/issues/DigiDNA/BetterDP.svg?style=flat)](https://github.com/DigiDNA/BetterDP/issues)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
 ![License](https://img.shields.io/badge/license-mit-brightgreen.svg?style=flat)
 [![Contact](https://img.shields.io/badge/contact-@DigiDNA-blue.svg?style=flat)](https://twitter.com/DigiDNA)  
@@ -18,7 +18,7 @@ About
 License
 -------
 
-**DP** is released under the terms of the MIT License.
+**BetterDP** is released under the terms of the MIT License.
 
 Repository Infos
 ----------------
