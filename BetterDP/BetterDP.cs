@@ -36,11 +36,19 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Markup;
 
 namespace BetterDP
 {
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class DP: Attribute
-    {}
+    {
+        public object DefaultValue
+        {
+            get;
+            set;
+        }
+    }
 
     public static partial class DependencyObjectExtensions
     {
@@ -52,7 +60,7 @@ namespace BetterDP
                 set;
             }
 
-            public PropertyInfo( Type ownerType, string name, Type type )
+            public PropertyInfo( Type ownerType, string name, Type type, object defaultValue = null )
             {
                 this.Property = DependencyProperty.Register
                 (
@@ -61,7 +69,7 @@ namespace BetterDP
                     ownerType,
                     new FrameworkPropertyMetadata
                     (
-                        ( type.IsValueType ) ? Activator.CreateInstance( type ) : null,
+                        ( type.IsValueType && defaultValue == null ) ? Activator.CreateInstance( type ) : defaultValue,
                         ( o, e ) =>
                         {
                             Type       t;
@@ -81,11 +89,16 @@ namespace BetterDP
         private static readonly List< string >                                           Inited = new List< string >();
         private static readonly Dictionary< string, Dictionary< string, PropertyInfo > > Props  = new Dictionary< string, Dictionary< string, PropertyInfo > >();
 
-        private static PropertyInfo PropertyForOwnerType< T >( string name, Type type )
+        private static PropertyInfo PropertyForOwnerType< T >( string name, Type ownerType )
+        {
+            return PropertyForOwnerType( name, typeof( T ), ownerType );
+        }
+
+        private static PropertyInfo PropertyForOwnerType( string name, Type type, Type ownerType, object defaultValue = null )
         {
             lock( Lock )
             {
-                string cls = type.FullName;
+                string cls = ownerType.FullName;
 
                 if( Props.ContainsKey( cls ) == false )
                 {
@@ -96,12 +109,12 @@ namespace BetterDP
                     }
                     #endif
 
-                    Props.Add( cls, new Dictionary<string, PropertyInfo>() );
+                    Props.Add( cls, new Dictionary< string, PropertyInfo >() );
                 }
 
                 if( Props[ cls ].ContainsKey( name ) == false )
                 {
-                    Props[ cls ].Add( name, new PropertyInfo( type, name, typeof( T ) ) );
+                    Props[ cls ].Add( name, new PropertyInfo( ownerType, name, type, defaultValue ) );
                 }
 
                 return Props[ cls ][ name ];
@@ -142,9 +155,9 @@ namespace BetterDP
             {
                 foreach( object p in prop.GetCustomAttributes( true ) )
                 {
-                    if( p is DP )
+                    if( p is DP dp )
                     {
-                        prop.GetValue( o, null );
+                        PropertyForOwnerType( prop.Name, prop.PropertyType, o.GetType(), dp.DefaultValue );
 
                         break;
                     }

@@ -60,17 +60,17 @@ namespace Example
             Console.WriteLine( "Dependency property \"" + name + "\" did change: " + value );
         }
 
-        [DP]
+        [DP( DefaultValue = "hello, world" )]
         public string Text1
         {
-            get => this.Get<string>();
+            get => this.Get< string >();
             set => this.Set( value );
         }
 
-        [DP]
+        [DP( DefaultValue = "hello, universe" )]
         public string Text2
         {
-            get => this.Get<string>();
+            get => this.Get< string >();
             set => this.Set( value );
         }
     }
