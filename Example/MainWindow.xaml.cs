@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /*!
- * @file        Program.cs
+ * @file        MainWindow.xaml.cs
  * @copyright   (c) 2020, DigiDNA - www.digidna.net
  * @author      Jean-David Gadina - www.digidna.net
  */
@@ -33,15 +33,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+using BetterDP;
 
 namespace Example
 {
-    class Program
+    public partial class MainWindow: Window
     {
-        [ System.Diagnostics.CodeAnalysis.SuppressMessage( "Style", "IDE0060:Remove unused parameter", Justification = "<Pending>" ) ]
-        static void Main( string[] args )
+        public MainWindow()
         {
-            
+            this.InitializeProperties();
+            this.InitializeComponent();
+        }
+
+        protected virtual void DidChangeDependencyProperty( string name, object value )
+        {
+            Console.WriteLine( "Dependency property \"" + name + "\" did change: " + value );
+        }
+
+        [DP]
+        public string Text1
+        {
+            get => this.Get<string>();
+            set => this.Set( value );
+        }
+
+        [DP]
+        public string Text2
+        {
+            get => this.Get<string>();
+            set => this.Set( value );
         }
     }
 }

@@ -23,20 +23,21 @@
  ******************************************************************************/
 
 /*!
- * @file        Foo.cs
+ * @file        App.xaml.cs
  * @copyright   (c) 2020, DigiDNA - www.digidna.net
  * @author      Jean-David Gadina - www.digidna.net
  */
 
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace Example
 {
-    class Foo: DependencyObject
+    public partial class App: Application
     {}
 }

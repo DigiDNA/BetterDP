@@ -29,18 +29,20 @@
  */
 
 using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Windows;
 
 [ assembly: AssemblyTitle( "Example" ) ]
 [ assembly: AssemblyDescription( "" ) ]
 [ assembly: AssemblyConfiguration( "" ) ]
-[ assembly: AssemblyCompany( "DigiDNA" ) ]
+[ assembly: AssemblyCompany( "" ) ]
 [ assembly: AssemblyProduct( "Example" ) ]
 [ assembly: AssemblyCopyright( "Copyright ©  2020" ) ]
 [ assembly: AssemblyTrademark( "" ) ]
 [ assembly: AssemblyCulture( "" ) ]
 [ assembly: ComVisible( false ) ]
-[ assembly: Guid( "b0028956-15b3-4d7c-bf4b-32bbf65fcc53" ) ]
+[ assembly: ThemeInfo( ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly ) ]
 [ assembly: AssemblyVersion( "1.0.0.0" ) ]
 [ assembly: AssemblyFileVersion( "1.0.0.0" ) ]
