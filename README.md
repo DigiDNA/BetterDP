@@ -39,7 +39,7 @@ public class Foo: DependencyObject
 }
 ```
 
-This package provides a way to reduce the amount of code needed to declare such a property, by intriducing a custom `[DP]` attribute.  
+This package provides a way to reduce the amount of code needed to declare such a property, by introducing a custom `[DP]` attribute.  
 The new syntax is then:
 
 ```cs
