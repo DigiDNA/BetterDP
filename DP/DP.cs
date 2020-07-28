@@ -108,7 +108,7 @@ namespace DP
             }
         }
 
-        public static T Get< T >( this DependencyObject o, string name )
+        public static T Get< T >( this DependencyObject o, [ CallerMemberName ] string name = "" )
         {
             PropertyInfo prop;
 
@@ -117,7 +117,7 @@ namespace DP
             return ( T )( o.GetValue( prop.Property ) );
         }
 
-        public static void Set< T >( this DependencyObject o, string name, T value )
+        public static void Set< T >( this DependencyObject o, T value, [ CallerMemberName ] string name = "" )
         {
             PropertyInfo prop;
 
