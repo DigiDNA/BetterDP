@@ -13,7 +13,75 @@ Simpler declaration for WPF Dependency Properties
 About
 -----
 
-...
+[Dependency Properties](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-properties-overview) are a neat feature of WPF, allowing powerful data binding mechanisms.
+
+However, declaring custom properties is not really straightforward and leads to a lot of boilerplate code.  
+As an example:
+
+```cs
+using System.Windows;
+
+public class Foo: DependencyObject
+{
+    public static readonly DependencyProperty BarProperty = DependencyProperty.Register
+    (
+        "Bar",
+        typeof( string ),
+        typeof( Foo ),
+        new PropertyMetadata()
+    );
+
+    public string Bar
+    {
+        get => this.GetValue( BarProperty ) as string;
+        set => this.SetValue( BarProperty, value );
+    }
+}
+```
+
+This package provides a way to reduce the amount of code needed to declare such a property, by intriducing a custom `[DP]` attribute.  
+The new syntax is then:
+
+```cs
+using System.Windows;
+using BetterDP;
+
+public class Foo: DependencyObject
+{
+    [DP]
+    public string Bar
+    {
+        get => this.Get< string >();
+        set => this.Set( value );
+    }
+}
+```
+
+### Default values
+
+A default value can be provided directly within the `[DP]` attribute, such as:
+
+```cs
+[DP( DefaultValue = "hello, world" )]
+public string Bar
+{
+    get => this.Get< string >();
+    set => this.Set( value );
+}
+```
+
+This is the equivalent of setting a default value with `PropertyMetadata` or `FrameworkPropertyMetadata`.
+
+### Change Handlers
+
+In order to be notified when a property has changed, you may implement the following method in your class:
+
+```cs
+protected virtual void DependencyPropertyDidChange( string name, object value )
+{}
+```
+
+It will automatically be called when a property marked with `[DP]` has changed.
 
 License
 -------
