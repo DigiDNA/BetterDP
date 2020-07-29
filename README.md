@@ -48,6 +48,12 @@ using BetterDP;
 
 public class Foo: DependencyObject
 {
+    static Foo()
+    {
+        DP.
+        ( typeof( Foo ) );
+    }
+
     [DP]
     public string Bar
     {
@@ -56,6 +62,14 @@ public class Foo: DependencyObject
     }
 }
 ```
+
+### Initialization
+
+**BetterDP** will automatically create dependency properties for every property marked with the `DP` attribute.  
+However, this unfortunately cannot be done lazily, as dependency properties usually need to be available before constructing an object, especially when using XAML bindings.
+
+This is why the example above uses a static constructor.  
+Calling `DP.InitializeProperties` will ensure every dependency property is properly initialized.
 
 ### Default values
 
