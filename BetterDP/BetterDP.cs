@@ -48,6 +48,11 @@ namespace BetterDP
             get;
             set;
         }
+
+        public static void InitializeProperties( Type type )
+        {
+            DependencyObjectExtensions.InitializeProperties( type );
+        }
     }
 
     public static partial class DependencyObjectExtensions
@@ -141,23 +146,28 @@ namespace BetterDP
 
         public static void InitializeProperties( this DependencyObject o )
         {
+            InitializeProperties( o.GetType() );
+        }
+
+        public static void InitializeProperties( Type type )
+        {
             lock( Lock )
             {
-                if( Inited.Contains( o.GetType().FullName ) )
+                if( Inited.Contains( type.FullName ) )
                 {
                     return;
                 }
 
-                Inited.Add( o.GetType().FullName );
+                Inited.Add( type.FullName );
             }
 
-            foreach( System.Reflection.PropertyInfo prop in o.GetType().GetProperties() )
+            foreach( System.Reflection.PropertyInfo prop in type.GetProperties() )
             {
                 foreach( object p in prop.GetCustomAttributes( true ) )
                 {
                     if( p is DP dp )
                     {
-                        PropertyForOwnerType( prop.Name, prop.PropertyType, o.GetType(), dp.DefaultValue );
+                        PropertyForOwnerType( prop.Name, prop.PropertyType, type, dp.DefaultValue );
 
                         break;
                     }

@@ -49,9 +49,13 @@ namespace Example
 {
     public partial class MainWindow: Window
     {
+        static MainWindow()
+        {
+            DP.InitializeProperties( typeof( MainWindow ) );
+        }
+
         public MainWindow()
         {
-            this.InitializeProperties();
             this.InitializeComponent();
         }
 
