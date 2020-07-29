@@ -1,4 +1,5 @@
-﻿/*******************************************************************************
+﻿
+/*******************************************************************************
  * The MIT License (MIT)
  * 
  * Copyright (c) 2020 DigiDNA - www.digidna.net
@@ -107,12 +108,10 @@ namespace BetterDP
 
                 if( Props.ContainsKey( cls ) == false )
                 {
-                    #if DEBUG
                     if( Inited.Contains( cls ) == false )
                     {
                         throw new Exception( "Properties for type " + cls + " are not initialzed. You need to call InitializeProperties() before using a property for this type." );
                     }
-                    #endif
 
                     Props.Add( cls, new Dictionary< string, PropertyInfo >() );
                 }
