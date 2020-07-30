@@ -50,8 +50,7 @@ public class Foo: DependencyObject
 {
     static Foo()
     {
-        DP.
-        ( typeof( Foo ) );
+        DP.InitializeProperties( typeof( Foo ) );
     }
 
     [DP]
