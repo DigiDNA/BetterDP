@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BetterDP\BetterDP.csproj">
-      <Project>{7bf6cc4b-7412-4ce9-b41d-6463ec235b43}</Project>
+      <Project>{0440e70f-c8ac-4e1e-90e4-14dd252f68e5}</Project>
       <Name>BetterDP</Name>
     </ProjectReference>
   </ItemGroup>
