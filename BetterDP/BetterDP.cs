@@ -100,28 +100,22 @@ namespace BetterDP
             return PropertyForOwnerType( name, typeof( T ), ownerType );
         }
 
+
         private static PropertyInfo PropertyForOwnerType( string name, Type type, Type ownerType, object defaultValue = null )
         {
             lock( Lock )
             {
-                string cls = ownerType.FullName;
-
-                if( Props.ContainsKey( cls ) == false )
+                if( Props.ContainsKey( ownerType.FullName ) && Props[ ownerType.FullName ].ContainsKey( name ) )
                 {
-                    if( Inited.Contains( cls ) == false )
-                    {
-                        throw new Exception( "Properties for type " + cls + " are not initialzed. You need to call InitializeProperties() before using a property for this type." );
-                    }
-
-                    Props.Add( cls, new Dictionary< string, PropertyInfo >() );
+                    return Props[ ownerType.FullName ][ name ];
                 }
 
-                if( Props[ cls ].ContainsKey( name ) == false )
+                if( ownerType.BaseType is Type baseType )
                 {
-                    Props[ cls ].Add( name, new PropertyInfo( ownerType, name, type, defaultValue ) );
+                    return PropertyForOwnerType( name, type.BaseType, baseType );
                 }
 
-                return Props[ cls ][ name ];
+                throw new Exception( "Cannot find dependency property '" + name + "' for type '" + ownerType.FullName + "'. Make sure to call InitializeProperties() before using a property for this type." );
             }
         }
 
@@ -158,17 +152,16 @@ namespace BetterDP
                 }
 
                 Inited.Add( type.FullName );
-            }
+                Props.Add( type.FullName, new Dictionary<string, PropertyInfo>() );
 
-            foreach( System.Reflection.PropertyInfo prop in type.GetProperties() )
-            {
-                foreach( object p in prop.GetCustomAttributes( true ) )
+                foreach( System.Reflection.PropertyInfo prop in type.GetProperties() )
                 {
-                    if( p is DP dp )
+                    foreach( object p in prop.GetCustomAttributes( true ) )
                     {
-                        PropertyForOwnerType( prop.Name, prop.PropertyType, type, dp.DefaultValue );
-
-                        break;
+                        if( p is DP dp && prop.DeclaringType == type )
+                        {
+                            Props[ type.FullName ].Add( prop.Name, new PropertyInfo( type, prop.Name, prop.PropertyType, dp.DefaultValue ) );
+                        }
                     }
                 }
             }
