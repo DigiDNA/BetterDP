@@ -90,7 +90,7 @@ This is the equivalent of setting a default value with `PropertyMetadata` or `Fr
 In order to be notified when a property has changed, you may implement the following method in your class:
 
 ```cs
-protected virtual void DependencyPropertyDidChange( string name, object value )
+protected virtual void DidChangeDependencyProperty( string name, object value )
 {}
 ```
 
