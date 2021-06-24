@@ -3,10 +3,10 @@
   <PropertyGroup>
     <TargetFrameworks>net462;netcoreapp3.1;net5.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>DigiDNA</Authors>
     <Company>DigiDNA</Company>
-    <Copyright>Copyright ©  2020</Copyright>
+    <Copyright>Copyright ©  2021</Copyright>
     <Description>Simpler declaration for WPF Dependency Properties.</Description>
     <PackageProjectUrl>https://github.com/DigiDNA/BetterDP</PackageProjectUrl>
     <PackageTags>wpf dependency property dp binding easy better simple</PackageTags>
