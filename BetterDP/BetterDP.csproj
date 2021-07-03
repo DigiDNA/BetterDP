@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net462;netcoreapp3.1;net5.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>DigiDNA</Authors>
     <Company>DigiDNA</Company>
     <Copyright>Copyright ©  2021</Copyright>
