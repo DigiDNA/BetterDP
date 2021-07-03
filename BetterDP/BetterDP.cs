@@ -112,7 +112,7 @@ namespace BetterDP
 
                 if( ownerType.BaseType is Type baseType )
                 {
-                    return PropertyForOwnerType( name, type.BaseType, baseType );
+                    return PropertyForOwnerType( name, type, baseType );
                 }
 
                 throw new Exception( "Cannot find dependency property '" + name + "' for type '" + ownerType.FullName + "'. Make sure to call InitializeProperties() before using a property for this type." );
