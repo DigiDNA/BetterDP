@@ -154,7 +154,7 @@ namespace BetterDP
                 Inited.Add( type.FullName );
                 Props.Add( type.FullName, new Dictionary<string, PropertyInfo>() );
 
-                foreach( System.Reflection.PropertyInfo prop in type.GetProperties() )
+                foreach( System.Reflection.PropertyInfo prop in type.GetProperties( BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic ) )
                 {
                     foreach( object p in prop.GetCustomAttributes( true ) )
                     {
