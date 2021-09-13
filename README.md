@@ -1,11 +1,11 @@
 BetterDP
 ========
 
-[![Build-AppVeyor](https://ci.appveyor.com/api/projects/status/github/DigiDNA/BetterDP?svg=true)](https://ci.appveyor.com/project/DigiDNA/BetterDP)
-[![Issues](http://img.shields.io/github/issues/DigiDNA/BetterDP.svg?style=flat)](https://github.com/DigiDNA/BetterDP/issues)
-![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
-![License](https://img.shields.io/badge/license-mit-brightgreen.svg?style=flat)
-[![Contact](https://img.shields.io/badge/contact-@DigiDNA-blue.svg?style=flat)](https://twitter.com/DigiDNA)  
+[![Build Status](https://img.shields.io/github/workflow/status/DigiDNA/BetterDP/ci-win?label=Windows&logo=windows)](https://github.com/DigiDNA/BetterDP/actions/workflows/ci-win.yaml)
+[![Issues](http://img.shields.io/github/issues/DigiDNA/BetterDP.svg?logo=github)](https://github.com/DigiDNA/BetterDP/issues)
+![Status](https://img.shields.io/badge/status-active-brightgreen.svg?logo=git)
+![License](https://img.shields.io/badge/license-mit-brightgreen.svg?logo=open-source-initiative)  
+[![Contact](https://img.shields.io/badge/follow-@DigiDNA-blue.svg?logo=twitter&style=social)](https://twitter.com/DigiDNA)
 
 Simpler declaration for WPF Dependency Properties
 -------------------------------------------------
